@@ -19,7 +19,9 @@ public class DistilleryController {
     @Autowired
     DistilleryRepository distilleryRepository;
 
+
     @GetMapping(value = "/distilleries")
+    // example queries localhost:8080/distilleries?region=Speyside
     public ResponseEntity<List<Distillery>> findWhiskiesByYear(
             @RequestParam(name="region", required = false) String region){
         if (region != null ) {
